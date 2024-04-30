@@ -5,7 +5,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState: GameState = {
     round: 1,
-    players: {}
+    players: []
 };
 
 export const gameStateSlice = createSlice({
@@ -26,8 +26,29 @@ export const gameStateSlice = createSlice({
             state.players[player.id] = player;
             return state;
         },
-        nextRound: (state) => {
+        nextRound: (state, action: PayloadAction<Player[]>) => {
             state.round = state.round + 1;
+            state.players = action.payload;
+            return state;
+        },
+        resetGame: (state) => {
+            const currentPlayers = state.players;
+            
+            for(let i = 0; i < currentPlayers.length; i++) {
+                currentPlayers[i].score = 0;
+                currentPlayers[i].scoreHistory = [];
+            };
+
+            state.players = currentPlayers;
+            state.round = 1;
+            return state;
+        },
+        newGame: (state) => {
+            state = {
+                round: 1,
+                players: []
+            };
+
             return state;
         }
     }
