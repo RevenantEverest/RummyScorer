@@ -13,10 +13,12 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as GamePlayersPlayerIdImport } from './routes/game/players.$playerId'
 
 // Create Virtual Routes
 
 const IndexLazyImport = createFileRoute('/')()
+const GameIndexLazyImport = createFileRoute('/game/')()
 
 // Create/Update Routes
 
@@ -24,6 +26,16 @@ const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+
+const GameIndexLazyRoute = GameIndexLazyImport.update({
+  path: '/game/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/game/index.lazy').then((d) => d.Route))
+
+const GamePlayersPlayerIdRoute = GamePlayersPlayerIdImport.update({
+  path: '/game/players/$playerId',
+  getParentRoute: () => rootRoute,
+} as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -33,11 +45,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyImport
       parentRoute: typeof rootRoute
     }
+    '/game/': {
+      preLoaderRoute: typeof GameIndexLazyImport
+      parentRoute: typeof rootRoute
+    }
+    '/game/players/$playerId': {
+      preLoaderRoute: typeof GamePlayersPlayerIdImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren([IndexLazyRoute])
+export const routeTree = rootRoute.addChildren([
+  IndexLazyRoute,
+  GameIndexLazyRoute,
+  GamePlayersPlayerIdRoute,
+])
 
 /* prettier-ignore-end */
