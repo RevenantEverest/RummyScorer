@@ -11,9 +11,11 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
+import { gameStateSlice } from './gameStateSlice';
 import { themeSlice } from './themeSlice';
 
 const rootReducer = combineReducers({
+    [gameStateSlice.name]: gameStateSlice.reducer,
     [themeSlice.name]: themeSlice.reducer,
 });
 
