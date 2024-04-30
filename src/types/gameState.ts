@@ -1,11 +1,16 @@
+export interface ScoreHistory {
+    started: number,
+    gained: number
+};
+
 export interface Player {
     id: number,
     name: string,
     score: number,
-    scoreHistory: number[]
+    scoreHistory: ScoreHistory[]
 };
 
 export interface GameState {
     round: number,
-    players: Record<number, Player>
+    players: Player[]
 };
