@@ -6,9 +6,10 @@ import { motion } from 'framer-motion';
 
 export type ButtonSizes = "xs" | "sm" | "md" | "lg" | "xl";
 export type PropExtenders = React.ButtonHTMLAttributes<HTMLButtonElement> & MotionProps;
+export type ButtonColor = "primary" | "secondary" | "accent" | "gradient" | "white" | "transparent";
 
 export interface ButtonProps extends PropExtenders {
-    color?: "primary" | "secondary" | "accent" | "gradient" | "white",
+    color?: ButtonColor,
     size?: ButtonSizes,
     spinnerSize?: ButtonSizes,
     outlined?: boolean,
@@ -21,12 +22,13 @@ function Button({ color="primary", size="md", outlined, loading, children, class
         <Spinner size={size} />
     );
 
-    const colorStyles = {
+    const colorStyles: Record<ButtonColor, string> = {
         "primary": outlined ? "border-2 border-primary text-primary" : `bg-primary text-text`,
         "secondary": outlined ? "border-2 border-secondary" : `bg-secondary text-text`,
         "accent": outlined ? "border-2 border-accent text-background" : "bg-accent text-background",
         "gradient": `bg-gradient-to-tr from-primary to-secondary ${outlined ? "first:text-white" : `hover:shadow-lg hover:shadow-[#00f3c] text-text`}`,
-        "white": outlined ? "border-2 border-white" : "bg-white text-background"
+        "white": outlined ? "border-2 border-white" : "bg-white text-background",
+        "transparent": "bg-transparent text-text"
     };
 
     const sizeStyles = {
