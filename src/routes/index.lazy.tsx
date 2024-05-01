@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { gameStateActions } from '@@store/actions';
 
 import { Layout, Card, Button } from '@@components/Common';
+import AddToHomeScreenButton from '@@components/AddToHomeScreenButton';
 
 export const Route = createLazyFileRoute('/')({
     component: Index
@@ -27,7 +28,7 @@ function Index() {
     return(
         <Layout main className="bg-gradient-to-br from-card to-secondary lg:px-96 !pt-0 justify-center pb-10 md:pb-0">
             <div className="z-10">
-                <Card className="bg-card-light">
+                <Card className="bg-card-light mb-8">
                     <div className="flex flex-col gap-10 items-center justify-center">
                         <div className="flex gap-4 items-center">
                             <TbCardsFilled className="text-5xl" />
@@ -48,6 +49,9 @@ function Index() {
                         </div>
                     </div>
                 </Card>
+                <div className="flex justify-center">
+                    <AddToHomeScreenButton />
+                </div>
             </div>
         </Layout>
     );
