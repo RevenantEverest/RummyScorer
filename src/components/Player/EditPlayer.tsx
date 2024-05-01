@@ -41,9 +41,9 @@ function EditPlayer({ player }: EditPlayerProps) {
 
     return(
         <React.Fragment>
-            <Tooltip content="Edit Player" placement="right">
+            <Tooltip content="Edit Player" placement="left">
                 <Button 
-                    className="py-3 px-0.5 rounded-full shadow-xl"
+                    className="py-3 rounded-full shadow-xl"
                     onClick={() => setVisible(true)}
                 >
                     <FaEdit className="text-lg absolute" />
