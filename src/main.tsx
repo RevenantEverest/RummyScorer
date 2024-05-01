@@ -8,8 +8,13 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import { RouterProvider, createRouter } from '@tanstack/react-router';
 import { routeTree } from './routeTree.gen';
+import NotFound from './components/NotFound';
 
-const router = createRouter({ routeTree });
+const router = createRouter({ 
+    routeTree, 
+    notFoundMode: "fuzzy", 
+    defaultNotFoundComponent: NotFound
+});
 
 // Register the router instance for type safety
 declare module '@tanstack/react-router' {

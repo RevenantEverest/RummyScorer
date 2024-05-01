@@ -6,12 +6,13 @@ import { FaTimes } from 'react-icons/fa';
 import { Card } from '@@components/Common';
 
 export interface ModalProps {
+    className?: string,
     motionKey: string,
     visible: boolean,
     setVisible: (value: false) => void
 };
 
-function Modal({ motionKey, visible, setVisible, children }: React.PropsWithChildren<ModalProps>) {
+function Modal({ motionKey, className="", visible, setVisible, children }: React.PropsWithChildren<ModalProps>) {
 
     const renderContent = () => {
         return(
@@ -35,7 +36,7 @@ function Modal({ motionKey, visible, setVisible, children }: React.PropsWithChil
                         onClick={() => setVisible(false)}
                     >
                         <div onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}>
-                            <Card className="rounded-2xl max-h-[96vh] w-[90vw] md:w-[60rem] overflow-y-auto overflow-x-hidden">
+                            <Card className={`rounded-2xl max-h-[96vh] w-[90vw] lg:w-[60rem] overflow-y-auto overflow-x-hidden ${className}`}>
                                 <div className="relative top-0 right-0">
                                     <div className="absolute top-0 right-0">
                                         <div className="flex items-end justify-end">
