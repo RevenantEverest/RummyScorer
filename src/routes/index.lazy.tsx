@@ -28,7 +28,7 @@ function Index() {
     return(
         <Layout main className="bg-gradient-to-br from-card to-secondary lg:px-96 !pt-0 justify-center pb-10 md:pb-0">
             <div className="z-10">
-                <Card className="bg-card-light mb-8">
+                <Card className="bg-card-light">
                     <div className="flex flex-col gap-10 items-center justify-center">
                         <div className="flex gap-4 items-center">
                             <TbCardsFilled className="text-5xl" />

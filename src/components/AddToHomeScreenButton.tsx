@@ -19,7 +19,7 @@ function AddToHomeScreenButton() {
 
     return(
         <CustomView condition={checkBrowserAvailability()}>
-            <Button className="!bg-card-light" onClick={() => setVisible(true)}>
+            <Button className="!bg-card-light mt-8" onClick={() => setVisible(true)}>
                 <p className="font-semibold">Install App</p>
             </Button>
             <Modal motionKey="pwa-prompt-modal" visible={visible} setVisible={setVisible}>
