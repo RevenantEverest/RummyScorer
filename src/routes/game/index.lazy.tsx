@@ -6,8 +6,8 @@ import { TbCardsFilled } from 'react-icons/tb';
 import { FaCaretLeft } from 'react-icons/fa6';
 
 import { Layout, Card, Tooltip, Button } from '@@components/Common';
-import AddPlayer from '@@components/Game/AddPlayer';
-import PlayerList from '@@components/Game/PlayerList';
+import AddPlayer from '@@components/Player/AddPlayer';
+import PlayerList from '@@components/Player/PlayerList';
 import NextRound from '@@components/Game/NextRound';
 import ResetGame from '@@components/Game/ResetGame';
 
