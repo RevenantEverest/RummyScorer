@@ -3,6 +3,7 @@ import path from 'path';
 
 import react from '@vitejs/plugin-react-swc';
 import { TanStackRouterVite } from '@tanstack/router-vite-plugin';
+import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -25,5 +26,58 @@ export default defineConfig({
             '@@utils': path.resolve(__dirname, './src/utils'),
         }
     },
-    plugins: [react(), TanStackRouterVite()],
+    plugins: [
+        react(), 
+        TanStackRouterVite(), 
+        VitePWA({ 
+            registerType: "autoUpdate",
+            injectRegister: "auto",
+            manifest: {
+                "name": "Rummy Card Game Score Tracker",
+                "short_name": "Rummy Scorer",
+                "description": "Effortlessly track and manage points for your Rummy card games",
+                "icons": [
+                    {
+                        "src": "favicon.ico",
+                        "sizes": "64x64 32x32 24x24 16x16",
+                        "type": "image/x-icon"
+                    },
+                    {
+                        "src": "logo192.png",
+                        "type": "image/png",
+                        "sizes": "192x192"
+                    },
+                    {
+                        "src": "logo192.png",
+                        "type": "image/png",
+                        "sizes": "192x192",
+                        "purpose": "maskable"
+                    },
+                    {
+                        "src": "logo512.png",
+                        "type": "image/png",
+                        "sizes": "512x512"
+                    },
+                    {
+                        "src": "logo512.png",
+                        "type": "image/png",
+                        "sizes": "512x512",
+                        "purpose": "maskable"
+                    },
+                    {
+                        "src": "apple-touch-icon.png",
+                        "type": "image/png",
+                        "sizes": "180x180",
+                        "purpose": "apple touch icon"
+                    }
+                ],
+                "start_url": "/",
+                "scope": "/",
+                "display": "standalone",
+                "theme_color": "#d86bfe",
+                "background_color": "#100016",
+                "orientation": "portrait"
+            }
+        })
+    ],
 });
