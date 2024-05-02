@@ -3,10 +3,18 @@ export interface ScoreHistory {
     gained: number
 };
 
+export interface DirtyRummyActions {
+    switchHands: boolean,
+    stealMeld: boolean,
+    reDrawHand: boolean,
+    goFishCard: boolean
+};
+
 export interface Player {
     id: number,
     name: string,
     score: number,
+    dirtyRummyActions: DirtyRummyActions,
     scoreHistory: ScoreHistory[]
 };
 
