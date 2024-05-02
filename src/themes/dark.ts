@@ -1,7 +1,8 @@
 import type { Theme, ThemeColors } from '@@types/theme.js';
 
 const colors: ThemeColors = {
-    primary: "#d86bfe",
+    // primary: "#d86bfe",
+    primary: "#cb3bfc",
     secondary: "#ac010b",
     accent: "#fd872c",
     background: "#100016",
