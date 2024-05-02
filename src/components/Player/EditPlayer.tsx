@@ -25,6 +25,7 @@ function EditPlayer({ player }: EditPlayerProps) {
             id: player.id,
             name: values.name,
             score: player.score,
+            dirtyRummyActions: player.dirtyRummyActions,
             scoreHistory: player.scoreHistory
         };
 
@@ -41,7 +42,7 @@ function EditPlayer({ player }: EditPlayerProps) {
 
     return(
         <React.Fragment>
-            <Tooltip content="Edit Player" placement="left">
+            <Tooltip className="hidden md:block" content="Edit Player" placement="left">
                 <Button 
                     className="py-3 rounded-full shadow-xl"
                     onClick={() => setVisible(true)}
