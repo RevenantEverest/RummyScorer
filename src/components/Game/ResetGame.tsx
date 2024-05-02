@@ -32,7 +32,7 @@ function ResetGame() {
 
     return(
         <React.Fragment>
-            <Tooltip content="Reset Game" placement="bottom">
+            <Tooltip className="hidden md:block" content="Reset Game" placement="bottom">
                 <Button 
                     className="py-3 rounded-full shadow-xl"
                     onClick={() => setVisible(true)}

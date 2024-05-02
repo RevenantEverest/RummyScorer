@@ -33,7 +33,7 @@ function RemovePlayer({ player }: RemovePlayerProps) {
 
     return(
         <React.Fragment>
-            <Tooltip content="Remove Player" placement="right">
+            <Tooltip className="hidden md:block" content="Remove Player" placement="right">
                 <Button 
                     className="py-3 rounded-full shadow-xl"
                     onClick={() => setVisible(true)}
