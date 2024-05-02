@@ -40,6 +40,12 @@ function NextRound({ players }: NextRoundProps) {
                 id: player.id,
                 name: player.name,
                 score: player.score + newScore,
+                dirtyRummyActions: {
+                    switchHands: false,
+                    stealMeld: false,
+                    reDrawHand: false,
+                    goFishCard: false
+                },
                 scoreHistory: [...player.scoreHistory, scoreHistoryEntry]
             })
         };
@@ -57,7 +63,7 @@ function NextRound({ players }: NextRoundProps) {
 
     return(
         <React.Fragment>
-            <Tooltip content="Next Round" placement="right">
+            <Tooltip className="hidden md:block" content="Next Round" placement="right">
                 <Button 
                     className="py-3 rounded-full shadow-xl"
                     onClick={() => setVisible(true)}
