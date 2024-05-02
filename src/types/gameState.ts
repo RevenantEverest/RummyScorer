@@ -10,7 +10,12 @@ export interface Player {
     scoreHistory: ScoreHistory[]
 };
 
+export interface Settings {
+    dirtyRummy: boolean
+};
+
 export interface GameState {
     round: number,
-    players: Player[]
+    players: Player[],
+    settings: Settings
 };
