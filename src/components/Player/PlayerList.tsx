@@ -1,19 +1,25 @@
-import type { Player } from '@@types/gameState';
+import type { Player, Settings } from '@@types/gameState';
 
 import { FaFaceFrown } from 'react-icons/fa6';
 import PlayerListCard from './PlayerListCard';
 
 export interface PlayerListProps {
-    players: Player[]
+    players: Player[],
+    settings: Settings
 };
 
-function PlayerList({ players }: PlayerListProps) {
+function PlayerList({ players, settings }: PlayerListProps) {
 
     const renderPlayers = () => {
         const playerSort = [...players].sort((a, b) => b.score - a.score);
 
         const Players = playerSort.map((player, index) => (
-            <PlayerListCard key={`player-${index}`} player={player} rank={index + 1} />
+            <PlayerListCard 
+                key={`player-${index}`} 
+                player={player} 
+                rank={index + 1} 
+                settings={settings}
+            />
         ));
 
         if(Players.length > 0) {
