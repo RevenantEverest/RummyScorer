@@ -8,6 +8,7 @@ import { Layout, Card, Button } from '@@components/Common';
 import EditPlayer from '@@components/Player/EditPlayer';
 import ScoreHistoryList from '@@components/Player/ScoreHistoryList';
 import RemovePlayer from '@@components/Player/RemovePlayer';
+import DirtyRummyActionsList from '@@components/Player/DirtyRummyActionsList';
 
 export const Route = createFileRoute('/game/players/$playerId')({
     component: SinglePlayer
@@ -17,6 +18,7 @@ function SinglePlayer() {
 
     const { playerId } = Route.useParams();
     const player = useSelector((state: RootState) => state.gameState.players[Number(playerId)]);
+    const gameState = useSelector((state: RootState) =>  state.gameState);
 
     const renderPlayer = () => (            
         <Card className="w-full">
@@ -26,6 +28,12 @@ function SinglePlayer() {
                         <h1 className="text-4xl font-bold">{player.name}</h1>
                     </div>
                     <h2 className="font-semibold text-accent text-3xl">{player.score}</h2>
+                    {
+                        gameState.settings.dirtyRummy && 
+                        <div className="mt-4 mb-2">
+                            <DirtyRummyActionsList editable player={player} />
+                        </div>
+                    }
                     <div className="flex gap-2 mt-5">
                         <EditPlayer player={player} />
                         <RemovePlayer player={player} />
