@@ -55,7 +55,7 @@ function SinglePlayer() {
     );
 
     return(
-        <Layout main className="bg-gradient-to-br from-card to-secondary lg:px-96 !pt-4 justify-center pb-10 md:pb-0 gap-5">
+        <Layout main className="lg:px-96 !pt-4 justify-center pb-10 md:pb-0 gap-5">
             <Link to="/game" className="self-start">
                 <Button color="accent">
                     <FaCaretLeft className="mr-2" />

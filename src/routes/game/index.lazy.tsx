@@ -20,7 +20,7 @@ function Game() {
     const gameState = useSelector((state: RootState) => state.gameState);
 
     return(
-        <Layout main className="bg-gradient-to-br from-card to-secondary lg:px-96 !pt-4 justify-center pb-10 md:pb-0">
+        <Layout main className="lg:px-96 !pt-4 justify-center pb-10 md:pb-0">
             <div className="z-10 w-full">
                 <Card className="bg-card-light">
                     <RoundHeader round={gameState.round} />

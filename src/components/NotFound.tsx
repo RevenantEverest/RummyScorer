@@ -6,15 +6,7 @@ function NotFound() {
     return(
         <Layout 
             main 
-            className={`
-                bg-gradient-to-br from-card to-secondary 
-                lg:px-96 
-                !pt-0 
-                justify-center 
-                pb-10 
-                md:pb-0
-                gap-5
-            `}
+            className="lg:px-96 !pt-0 justify-center pb-10 md:pb-0 gap-5"
         >
             <h1>You're not suppose to be here...</h1>
             <Link to="/">

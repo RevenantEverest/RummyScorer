@@ -7,7 +7,7 @@ interface LayoutProps extends React.HTMLProps<HTMLDivElement> {
 
 function Layout({ className, main, transparent, children, ...rest }: React.PropsWithChildren<LayoutProps>) {
     
-    const bgColor = transparent ? "bg-transparent" : "bg-background";
+    const bgColor = transparent ? "bg-transparent" : "bg-gradient-to-br from-card to-secondary";
     const mainStyles = main && "min-h-[100vh]";
     
     return(
