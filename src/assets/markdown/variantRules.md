@@ -1,0 +1,3 @@
+## Floating
+
+This variant also required that a player must discard in order for the hand to be ended, but they can meld all of their cards on their turn. When this happens the player “floats” until it is their turn again. The player can then draw a card and discard it, draw from the discard pile and make a meld and discard like normal, etc. If the player still has cards at that point (because of drawing more than one card from the discard pile) then play continues like normal until a player is able to go out with a discard.

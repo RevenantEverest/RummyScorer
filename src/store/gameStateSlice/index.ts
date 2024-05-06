@@ -5,7 +5,10 @@ import * as sliceActions from './actions';
 
 const initialState: GameState = {
     round: 1,
-    players: []
+    players: [],
+    settings: {
+        dirtyRummy: false
+    }
 };
 
 export const gameStateSlice = createSlice({

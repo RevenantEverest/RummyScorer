@@ -26,7 +26,7 @@ function Button({ color="primary", size="md", outlined, loading, children, class
         "primary": outlined ? "border-2 border-primary text-primary" : `bg-primary text-text`,
         "secondary": outlined ? "border-2 border-secondary" : `bg-secondary text-text`,
         "accent": outlined ? "border-2 border-accent text-background" : "bg-accent text-background",
-        "gradient": `bg-gradient-to-tr from-primary to-secondary ${outlined ? "first:text-white" : `hover:shadow-lg hover:shadow-[#00f3c] text-text`}`,
+        "gradient": `bg-gradient-to-br from-card to-secondary ${outlined ? "first:text-white" : `hover:shadow-lg hover:shadow-[#00f3c] text-text`}`,
         "white": outlined ? "border-2 border-white" : "bg-white text-background",
         "transparent": "bg-transparent text-text"
     };

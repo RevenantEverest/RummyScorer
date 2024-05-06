@@ -25,6 +25,12 @@ function AddPlayer({ playerCount }: AddPlayerProps) {
             id: playerCount,
             name: values.name,
             score: 0,
+            dirtyRummyActions: {
+                switchHands: false,
+                stealMeld: false,
+                reDrawHand: false,
+                goFishCard: false
+            },
             scoreHistory: []
         };
 
@@ -41,7 +47,7 @@ function AddPlayer({ playerCount }: AddPlayerProps) {
 
     return(
         <React.Fragment>
-            <Tooltip content="Add Player" placement="bottom">
+            <Tooltip className="hidden md:block" content="Add Player" placement="bottom">
                 <Button 
                     className="py-3 rounded-full shadow-xl"
                     onClick={() => setVisible(true)}

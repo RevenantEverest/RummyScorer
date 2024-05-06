@@ -12,7 +12,7 @@ function removePlayer(state: GameState, action: PayloadAction<number>) {
 
         playerArr.push({
             ...currentPlayers[i],
-            id: i
+            id: playerArr.length
         });
     };
 

@@ -4,4 +4,5 @@ export { default as nextRound } from './nextRound.action';
 export { default as removePlayer } from './removePlayer.action';
 export { default as resetGame } from './resetGame.action';
 export { default as setRound } from './setRound.action';
+export { default as updateSettings } from './updateSettings.action';
 export { default as updatePlayer } from './updatePlayer.action';
