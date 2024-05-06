@@ -36,7 +36,7 @@ function Root() {
                         border: "none",
                         background: "transparent",
                         boxShadow: "none",
-                        maxWidth: "33%"
+                        maxWidth: "98%"
                     }
                 }}
             />
