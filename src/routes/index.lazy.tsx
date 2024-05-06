@@ -18,7 +18,7 @@ function Index() {
 
     return(
         <Layout main className="lg:px-96 !pt-0 justify-center pb-10 md:pb-0">
-            <div className="z-10 w-8/12">
+            <div className="z-10 w-full md:w-8/12">
                 <Card className="bg-card-light">
                     <div className="flex flex-col gap-10 items-center justify-center">
                         <HomeHeader />

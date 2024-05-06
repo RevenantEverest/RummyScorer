@@ -54,9 +54,9 @@ function ClearLocalStorage() {
     return(
         <React.Fragment>
             <div className="flex flex-col gap-2.5">
-                <p className="text-muted text-start">If you're experiencing issues, try clearing the cache.</p>
+                <p className="text-muted text-start text-sm md:text-md">If you're experiencing issues, try clearing the cache.</p>
                 <div className="flex items-center gap-4">
-                    <Button className="w-4/12" onClick={() => setVisible(true)}>
+                    <Button className="w-6/12 md:w-4/12" onClick={() => setVisible(true)}>
                         <p className="font-semibold">Clear Cache</p>
                     </Button>
                     {success && <FaCheckSquare className="text-lime-500" />}

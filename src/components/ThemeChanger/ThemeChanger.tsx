@@ -53,7 +53,7 @@ function ThemeChanger() {
     };
 
     return(
-        <div className="flex p-3 bg-card-light rounded-lg">
+        <div className="flex items-center p-3 bg-card-light rounded-lg">
             <h1 className="font-semibold text-lg flex-1 text-start">Themes:</h1>
             <div className="flex gap-5 justify-center md:gap-1 flex-col md:flex-row">
                 {renderThemes()}

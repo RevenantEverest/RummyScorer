@@ -10,7 +10,7 @@ function HomeHeader() {
             <div>
                 <SettingsIcon />
             </div>
-            <div className="flex flex-1 gap-4 items-center justify-center">
+            <div className="flex flex-1 flex-col md:flex-row gap-1 md:gap-4 items-center justify-center">
                 <TbCardsFilled className="text-5xl" />
                 <h1 className="font-semibold text-3xl md:text-4xl">Rummy Scorer</h1>
             </div>
