@@ -46,7 +46,7 @@ function Rules() {
     };
     
     return(
-        <Layout main className="bg-gradient-to-br from-card to-secondary lg:px-96 !pt-0 justify-center pb-10 md:pb-0">
+        <Layout main className="lg:px-96 !pt-0 justify-center pb-10 md:pb-0">
             <div className="my-20">
                 <Link to="/game" className="self-start">
                     <Button color="accent">
