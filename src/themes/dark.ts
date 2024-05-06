@@ -11,9 +11,9 @@ const colors: ThemeColors = {
     muted: "#7a6e80"
 };
 
-const dark: Theme = {
+const darkTheme: Theme = {
     name: "dark",
     colors
 };
 
-export default dark;
+export default darkTheme;
