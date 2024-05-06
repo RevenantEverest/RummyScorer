@@ -1,7 +1,7 @@
 import { TbCardsFilled } from 'react-icons/tb';
 
-import Settings from './Settings';
 import RulesLink from './RulesLink';
+import SettingsIcon from '../Settings/SettingsIcon';
 
 export interface RoundHeaderProps {
     round: number
@@ -12,7 +12,7 @@ function RoundHeader({ round }: RoundHeaderProps) {
     return(
         <div className="flex items-center justify-center">
             <div className="">
-                <Settings />
+                <SettingsIcon />
             </div>
             <div className="flex flex-1 gap-2 justify-center items-center">
                 <TbCardsFilled className="text-5xl" />
