@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { ENV } from '@@constants';
 
 import { themes as themeUtils } from '@@utils';
+import { Toaster } from 'react-hot-toast';
 
 export const Route = createRootRoute({
     component: Root
@@ -28,6 +29,17 @@ function Root() {
     return(
         <React.Fragment>
             <Outlet />
+            <Toaster
+                position="top-center"
+                toastOptions={{
+                    style: {
+                        border: "none",
+                        background: "transparent",
+                        boxShadow: "none",
+                        maxWidth: "33%"
+                    }
+                }}
+            />
             {
                 ENV.NODE_ENV !== "production" && 
                 <TanStackRouterDevtools />
