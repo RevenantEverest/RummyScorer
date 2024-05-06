@@ -24,7 +24,7 @@ function RemovePlayer({ player }: RemovePlayerProps) {
         dispatch(gameStateActions.removePlayer(player.id));
 
         toast((t) => (
-            <ToastSuccess toast={t} message="Player updated!" />
+            <ToastSuccess toast={t} message="Player removed successfully!" />
         ));
 
         setVisible(false);
